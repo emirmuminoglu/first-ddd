@@ -32,7 +32,7 @@ func (r *userRepository) Save(ctx context.Context, u *domain.User) error {
 	col := r.col("user")
 
 	_, err := col.InsertOne(ctx, u)
-	
+
 	return err
 }
 

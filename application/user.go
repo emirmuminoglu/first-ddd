@@ -3,8 +3,8 @@ package application
 import (
 	"context"
 
-	"github.com/emirmuminoglu/first-ddd/domain/repository"
 	"github.com/emirmuminoglu/first-ddd/domain"
+	"github.com/emirmuminoglu/first-ddd/domain/repository"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 

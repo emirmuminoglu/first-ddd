@@ -6,7 +6,7 @@ import (
 )
 
 func NewListener() (net.Listener, error) {
-	network :=  os.Getenv("LN_NETWORK")
+	network := os.Getenv("LN_NETWORK")
 	addr := os.Getenv("LN_ADDR")
 
 	return net.Listen(network, addr)
