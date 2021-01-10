@@ -13,6 +13,10 @@ var (
 	router         *lloyd.Lloyd
 )
 
+func ensureIndexes() {
+	
+}
+
 func initUserInteractor() {
 	db, err := config.NewDBConnection()
 	if err != nil {

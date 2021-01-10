@@ -6,7 +6,6 @@ import (
 	"github.com/emirmuminoglu/first-ddd/domain"
 	"github.com/emirmuminoglu/first-ddd/domain/repository"
 	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -19,11 +18,11 @@ func NewUserRepository(client *mongo.Client, dbname string) repository.UserRepos
 	return &userRepository{client: client, dbname: dbname}
 }
 
-func (r *userRepository) Get(ctx context.Context, id primitive.ObjectID) (*domain.User, error) {
+func (r *userRepository) Get(ctx context.Context, email string) (*domain.User, error) {
 	col := r.col("user")
 
 	u := new(domain.User)
-	err := col.FindOne(ctx, bson.M{"_id": id}).Decode(u)
+	err := col.FindOne(ctx, bson.M{"email": email}).Decode(u)
 
 	return u, err
 }
